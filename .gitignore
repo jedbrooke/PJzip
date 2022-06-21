@@ -1,0 +1,4 @@
+.vscode
+pjzip/target
+*.gz
+*.txt
