@@ -1,4 +1,4 @@
-package pjzip.src.test.java.pjzip;
+package src.test.java.pjzipTest;
 
 import static org.junit.Assert.assertTrue;
 

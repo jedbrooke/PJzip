@@ -1,4 +1,4 @@
-package pjzip.src.main.java.pjzip;
+package pjzip;
 
 /**
  * Block

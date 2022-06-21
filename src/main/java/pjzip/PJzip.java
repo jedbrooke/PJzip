@@ -1,7 +1,12 @@
-package pjzip.src.main.java.pjzip;
+package pjzip;
 
-import java.io.*;
-import java.util.zip.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.zip.CRC32;
+import java.util.zip.Deflater;
+
+import org.apache.commons.cli.*;
+
 
 /**
  * PJzip
@@ -156,12 +161,23 @@ public class PJzip {
         System.out.close();
     }
 
-    public static int test() {
-        return 5;
-    }
 
     public static void main(String[] args) {
         int num_threads = Runtime.getRuntime().availableProcessors();
+
+        Options options = new Options();
+        options.addOption("p", false, "select number of threads");
+        System.out.println(options.toString());
+        
+        // CommandLineParser parser = new DefaultParser();
+        // CommandLine cmd = parser.parse(options, args);
+
+        // if (cmd.hasOption("p")) {
+        //     System.out.println("has p");
+        // } else {
+        //     System.out.println("no p");
+        // }
+        
         if (args.length > 0) {
             if (args[0].equals("-p")) {
                 if (args.length != 2) {

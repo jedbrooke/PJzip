@@ -1,4 +1,5 @@
 .vscode
-pjzip/target
+.idea
+target
 *.gz
 *.txt

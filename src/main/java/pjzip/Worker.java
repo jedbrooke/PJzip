@@ -1,4 +1,4 @@
-package pjzip.src.main.java.pjzip;
+package pjzip;
 
 import java.util.zip.Deflater;
 
