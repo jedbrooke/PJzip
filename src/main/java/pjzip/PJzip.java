@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.zip.CRC32;
 import java.util.zip.Deflater;
 
-import org.apache.commons.cli.*;
+// import org.apache.commons.cli.*;
 
 
 /**
@@ -105,7 +105,6 @@ public class PJzip {
         
         // System.err.println("finished reading " + num_blocks + " blocks");
         BM.finishedReading();
-        
         Deflater compressor = new Deflater(Deflater.DEFAULT_COMPRESSION, true);
 
         if (num_threads < 2) {
@@ -146,9 +145,6 @@ public class PJzip {
                 }
             }
         }
-        
-        // System.err.println("crc: " + crc.getValue());
-        // System.err.println("total bytes read: " + totalBytesRead);
 
         byte[] trailerBuf = new byte[TRAILER_SIZE];
         writeTrailer(totalBytesRead, trailerBuf, 0);
@@ -165,9 +161,9 @@ public class PJzip {
     public static void main(String[] args) {
         int num_threads = Runtime.getRuntime().availableProcessors();
 
-        Options options = new Options();
-        options.addOption("p", false, "select number of threads");
-        System.out.println(options.toString());
+        // Options options = new Options();
+        // options.addOption("p", false, "select number of threads");
+        // System.err.println(options.toString());
         
         // CommandLineParser parser = new DefaultParser();
         // CommandLine cmd = parser.parse(options, args);
@@ -192,8 +188,8 @@ public class PJzip {
         }
 
         // System.err.println("using " + num_threads + " threads");
-        long mem = Runtime.getRuntime().maxMemory();
-        System.err.println("max mem: " + (double)mem / (1 << 30) + "G");
+        // long mem = Runtime.getRuntime().maxMemory();
+        // System.err.println("max mem: " + (double)mem / (1 << 30) + "G");
 
         PJzip compressor = new PJzip(num_threads);
 
